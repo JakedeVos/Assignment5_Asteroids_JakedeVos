@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    public GameObject pewpew;
+    public float pewpewspeed = 3f;
     void Start()
     {
 
@@ -17,7 +19,7 @@ public class NewBehaviourScript : MonoBehaviour
         bool rotationleft = Input.GetKey(KeyCode.LeftArrow);
         bool rotationright = Input.GetKey(KeyCode.RightArrow);
         bool moveforward = Input.GetKey(KeyCode.UpArrow);
-        bool shootblast = Input.GetKey(KeyCode.Space);
+        bool shootblast = Input.GetKeyDown(KeyCode.Space);
 
         float rotate = 0;
         if (rotationleft)
@@ -32,5 +34,15 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (moveforward)
             transform.position += transform.up * 5f * Time.deltaTime;
+
+        if (shootblast)
+        {
+            Vector3 position = transform.position + transform.up;
+            GameObject pewpewInstance = Instantiate(pewpew, position, Quaternion.identity);
+            Rigidbody2D rigidbody = pewpewInstance.GetComponent<Rigidbody2D>();
+            rigidbody.AddForce(transform.up * pewpewspeed, ForceMode2D.Impulse);
+
+            Destroy(pewpewInstance, 20);
+        }
     }
 }
