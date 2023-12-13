@@ -8,13 +8,14 @@ public class Asteroid_Rocks : MonoBehaviour
 {
     public GameObject rock;
     public float rockspeed = 3f;
+    
     void Start()
     {
         float x = Random.Range(10f, -10f);
         float y = Random.Range(5f, -5f);
         transform.position = new Vector3(x, y, 0);
 
-        bool move = false;
+        
 
         float rotate = Random.Range(0f, 360f);
 
@@ -30,11 +31,21 @@ public class Asteroid_Rocks : MonoBehaviour
         rigidbody.AddForce(transform.up * rockspeed, ForceMode2D.Impulse);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision) 
     {
-        
-        
-        
+        SplitThisObject();
+    }
+
+    private int splitCount;
+    void SplitThisObject()
+    {
+        GameObject number1 = Instantiate(gameObject);
+        GameObject number2 = Instantiate(gameObject);
+        number1.transform.localScale = number1.transform.localScale / 2f;
+        number2.transform.localScale = number2.transform.localScale / 2f;
+        number1.GetComponent<Asteroid_Rocks>().splitCount++;
+        number2.GetComponent<Asteroid_Rocks>().splitCount++;
+
+        Destroy(gameObject);
     }
 }
