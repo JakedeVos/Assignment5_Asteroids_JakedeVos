@@ -45,4 +45,6 @@ public class NewBehaviourScript : MonoBehaviour
             Destroy(pewpewInstance, 5);
         }
     }
+   
 }
+

@@ -9,11 +9,11 @@ public class Screen_BoarderTeleportation : MonoBehaviour
     {
         if (!collider2D.CompareTag("pewpew"))
         if (!collider2D.CompareTag("spaceship"))
-            return;
+        if (!collider2D.CompareTag("asteroid"))
+                    return;
 
-        Vector3 newPosition = collider2D.transform.position + Offset;
-        collider2D.attachedRigidbody.MovePosition(newPosition);
-
+            Vector3 newPosition = collider2D.transform.position + Offset;
+            collider2D.attachedRigidbody.MovePosition(newPosition);    
     }
 }
 
