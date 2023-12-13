@@ -34,6 +34,7 @@ public class Asteroid_Rocks : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) 
     {
         SplitThisObject();
+        Destroy(collision.gameObject);
     }
 
     private int splitCount;
