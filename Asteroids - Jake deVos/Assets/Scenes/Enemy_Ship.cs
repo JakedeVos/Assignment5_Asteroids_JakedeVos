@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_Ship : MonoBehaviour
 {
-
+    //Get enemy object and enemy ship speed
     public GameObject enemyship;
     public GameObject pewpew;
     public float enemyshipspeed = 4f;

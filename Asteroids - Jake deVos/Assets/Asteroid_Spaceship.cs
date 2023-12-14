@@ -7,6 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
     //Shooting mechanic object and speed
     public GameObject pewpew;
     public float pewpewspeed = 3f;
+    public Rigidbody2D rb;
     void Start()
     {
 
@@ -35,7 +36,10 @@ public class NewBehaviourScript : MonoBehaviour
 
         //Control to move forwards
         if (moveforward)
-            transform.position += transform.up * 5f * Time.deltaTime;
+        {
+            rb.AddForce(transform.up * 5);
+        }
+        
 
         //Shooting mechanism
         if (shootblast)
