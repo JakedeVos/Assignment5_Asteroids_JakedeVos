@@ -30,9 +30,11 @@ public class Asteroid_Rocks : MonoBehaviour
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.AddForce(transform.up * rockspeed, ForceMode2D.Impulse);
     }
+    
 
     private void OnCollisionEnter2D(Collision2D collision) 
     {
+
         if (!collision.gameObject.CompareTag("pewpew"))
         
             return;
@@ -41,6 +43,7 @@ public class Asteroid_Rocks : MonoBehaviour
         Destroy(collision.gameObject);
     }
 
+    
     private int splitCount;
     void SplitThisObject()
     {
@@ -52,5 +55,12 @@ public class Asteroid_Rocks : MonoBehaviour
         number2.GetComponent<Asteroid_Rocks>().splitCount++;
 
         Destroy(gameObject);
+
+        if (splitCount == 2)
+        {
+            Destroy(number1);
+            Destroy(number2);
+        }
     }
+
 }

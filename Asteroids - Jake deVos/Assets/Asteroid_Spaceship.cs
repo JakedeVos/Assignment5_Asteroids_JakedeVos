@@ -11,7 +11,6 @@ public class NewBehaviourScript : MonoBehaviour
 
     }
 
-
     void Update()
     {
         
@@ -42,7 +41,7 @@ public class NewBehaviourScript : MonoBehaviour
             Rigidbody2D rigidbody = pewpewInstance.GetComponent<Rigidbody2D>();
             rigidbody.AddForce(transform.up * pewpewspeed, ForceMode2D.Impulse);
 
-            Destroy(pewpewInstance, 5);
+            Destroy(pewpewInstance, 3);
         }
     }
    
