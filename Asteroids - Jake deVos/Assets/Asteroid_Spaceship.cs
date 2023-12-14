@@ -37,7 +37,7 @@ public class NewBehaviourScript : MonoBehaviour
         //Control to move forwards
         if (moveforward)
         {
-            rb.AddForce(transform.up * 5);
+            rb.AddForce(transform.up * 2);
         }
         
 
@@ -51,8 +51,6 @@ public class NewBehaviourScript : MonoBehaviour
 
             Destroy(pewpewInstance, 3);
         }
-
     }
-   
 }
 

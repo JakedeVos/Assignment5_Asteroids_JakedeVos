@@ -27,4 +27,11 @@ public class Enemy_Ship : MonoBehaviour
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.AddForce(transform.up * enemyshipspeed, ForceMode2D.Impulse);
     }
+    private void OnCollisionEnter2D(Collision2D collider)
+    {
+
+        if (!collider.gameObject.CompareTag("pewpew"))
+
+        Destroy(collider.gameObject);
+    }
 }
