@@ -30,12 +30,14 @@ public class Asteroid_Rocks : MonoBehaviour
     }
     
     //Get blasts to collide with asteroid and break them
-    private void OnCollisionEnter2D(Collision2D collision) 
+    public void OnCollisionEnter2D(Collision2D collision) 
     {
 
         if (!collision.gameObject.CompareTag("pewpew"))
-        
-            return;
+
+            if (!collision.gameObject.CompareTag("spaceship"))
+
+        return;
 
         SplitThisObject();
         Destroy(collision.gameObject);
@@ -53,6 +55,8 @@ public class Asteroid_Rocks : MonoBehaviour
         number2.GetComponent<Asteroid_Rocks>().splitCount++;
 
         Destroy(gameObject);
+
+        
     }
 
 }

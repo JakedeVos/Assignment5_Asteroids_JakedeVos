@@ -6,9 +6,8 @@ public class Enemy_Ship : MonoBehaviour
 {
     //Get enemy object and enemy ship speed
     public GameObject enemyship;
-    public GameObject pewpew;
     public float enemyshipspeed = 4f;
-    public float pewpewspeed = 6f;
+
 
     void Start()
     {
@@ -26,12 +25,6 @@ public class Enemy_Ship : MonoBehaviour
         //Add rigidbody
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.AddForce(transform.up * enemyshipspeed, ForceMode2D.Impulse);
-    }
-    private void OnCollisionEnter2D(Collision2D collider)
-    {
 
-        if (!collider.gameObject.CompareTag("pewpew"))
-
-        Destroy(collider.gameObject);
     }
 }
