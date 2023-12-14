@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    //Shooting mechanic object and speed
     public GameObject pewpew;
     public float pewpewspeed = 3f;
     void Start()
@@ -14,12 +15,13 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         
-
+        //Get player inputs for rotation, acceleration, and the shooting mechanic
         bool rotationleft = Input.GetKey(KeyCode.LeftArrow);
         bool rotationright = Input.GetKey(KeyCode.RightArrow);
         bool moveforward = Input.GetKey(KeyCode.UpArrow);
         bool shootblast = Input.GetKeyDown(KeyCode.Space);
 
+        //Rotation controls
         float rotate = 0;
         if (rotationleft)
             rotate += 300 * Time.deltaTime;
@@ -31,9 +33,11 @@ public class NewBehaviourScript : MonoBehaviour
         transform.rotation 
             = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + rotate);
 
+        //Control to move forwards
         if (moveforward)
             transform.position += transform.up * 5f * Time.deltaTime;
 
+        //Shooting mechanism
         if (shootblast)
         {
             Vector3 position = transform.position + transform.up;

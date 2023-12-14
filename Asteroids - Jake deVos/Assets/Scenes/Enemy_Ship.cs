@@ -12,15 +12,18 @@ public class Enemy_Ship : MonoBehaviour
 
     void Start()
     {
+        //Spawn enemy ship randomly on the screen
         float x = Random.Range(10f, -10f);
         float y = Random.Range(5f, -5f);
         transform.position = new Vector3(x, y, 0);
 
+        //Rotate enemy ship in a random direction
         float rotate = Random.Range(0f, 360f);
 
         transform.rotation
         = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + rotate);
 
+        //Add rigidbody
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.AddForce(transform.up * enemyshipspeed, ForceMode2D.Impulse);
     }
