@@ -22,11 +22,6 @@ public class Asteroid_Rocks : MonoBehaviour
         transform.rotation
         = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + rotate);
 
-        //if (move = false)
-        //{
-        //    transform.position += transform.up * 5f * Time.deltaTime;
-        //}
-
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.AddForce(transform.up * rockspeed, ForceMode2D.Impulse);
     }
@@ -55,12 +50,6 @@ public class Asteroid_Rocks : MonoBehaviour
         number2.GetComponent<Asteroid_Rocks>().splitCount++;
 
         Destroy(gameObject);
-
-        if (splitCount == 2)
-        {
-            Destroy(number1);
-            Destroy(number2);
-        }
     }
 
 }
