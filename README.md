@@ -1,1 +1,3 @@
 # Assignment5_Asteroids_JakedeVos
+How To Play My Version Of Asteroids:
+In my version of the game, you play as a spaceship floating around in space. You can use the left and right arrow keys to rotate your ship left and right. You can use the up arrow to push your spaceship forward. Your objective is to destroy as many asteroids as you can. The asteroids will drift on the screen, and when you shoot them, they will split into two smaller asteroids. Destroy them and they will disappear. In addition to this, if you go to the top bottom, or far left or far right of the screen, you will appear on the opposite side of the screen. Destroy as many of the asteroids as you can! Have fun! :)
