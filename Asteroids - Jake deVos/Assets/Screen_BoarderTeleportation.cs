@@ -10,7 +10,8 @@ public class Screen_BoarderTeleportation : MonoBehaviour
         if (!collider2D.CompareTag("pewpew"))
         if (!collider2D.CompareTag("spaceship"))
         if (!collider2D.CompareTag("asteroid"))
-                    return;
+        if (!collider2D.CompareTag("enemyship"))
+                        return;
 
             Vector3 newPosition = collider2D.transform.position + Offset;
             collider2D.attachedRigidbody.MovePosition(newPosition);    

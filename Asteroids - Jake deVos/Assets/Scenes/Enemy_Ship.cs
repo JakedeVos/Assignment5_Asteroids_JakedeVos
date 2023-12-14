@@ -6,15 +6,15 @@ public class Enemy_Ship : MonoBehaviour
 {
 
     public GameObject enemyship;
+    public GameObject pewpew;
     public float enemyshipspeed = 4f;
+    public float pewpewspeed = 6f;
 
     void Start()
     {
         float x = Random.Range(10f, -10f);
         float y = Random.Range(5f, -5f);
         transform.position = new Vector3(x, y, 0);
-
-
 
         float rotate = Random.Range(0f, 360f);
 
@@ -24,5 +24,4 @@ public class Enemy_Ship : MonoBehaviour
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.AddForce(transform.up * enemyshipspeed, ForceMode2D.Impulse);
     }
-
 }
