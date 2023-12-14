@@ -1431,6 +1431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pewpew: {fileID: 1962079863}
   pewpewspeed: 5
+  rb: {fileID: 1605974451}
 --- !u!212 &1605974449
 SpriteRenderer:
   m_ObjectHideFlags: 0
